@@ -1,0 +1,36 @@
+// floors Buttons
+
+.main-choseFloorBtn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 3;
+    background-color: white;
+    opacity: 0;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+  }
+  
+  .main-choseFloorBtn:hover {
+    opacity: 0.5;
+    animation:hoverChoseBtn 3s infinite;
+    -webkit-animation:hoverChoseBtn 3s infinite;
+  }
+  
+  @keyframes hoverChoseBtn {
+    0% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 0.2;
+    }
+    100% {
+      opacity: 0.5;
+    }
+  }

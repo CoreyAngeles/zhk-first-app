@@ -1,0 +1,87 @@
+@use '../scss/variables.scss' as vars;
+
+.image-background {
+    display: block;
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    filter:blur(20px);
+    -webkit-filter:blur(20px);
+  }
+  
+  .panzoom-main-wrapper {
+    background-color: transparent;
+    overflow: hidden;
+  }
+  
+  .panzoom-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .main-page__wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .main-page__image {
+    position: relative;
+    display: block;
+    height: 100vh;
+    z-index: 1;
+  }
+
+  // rooms
+
+
+  .main-room {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 2;
+    opacity: vars.$mainOpacity;
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+}
+.opacity-none {
+  opacity: 0;
+}
+
+.room1-color {
+  background-color: vars.$filter1RoomButtonColor;
+}
+
+.room2-color {
+  background-color: vars.$filter2RoomButtonColor;
+}
+
+.room3-color {
+  background-color: vars.$filter3RoomButtonColor;
+}
+
+.room1-1 {
+  clip-path: polygon(65.5% 37.7%, 70.9% 39%, 70.9% 93.6%, 65.5% 94.9%);
+}
+
+.room2-1 {
+  clip-path: polygon(49.5% 40%, 59.5% 36%, 65.5% 37.7%, 65.5% 95%,59.5% 96%, 49.5% 93%);
+}
+
+.room3-1 {
+  clip-path: polygon(49.5% 16%, 59.5% 9%, 70.8% 14%, 70.9% 39%, 59.5% 36.2%, 49.5% 40.2%);
+}
+
+
+
+.floorBtn7 {
+  clip-path: polygon(30.9% 60%, 59.5% 53%, 70.8% 54.4%, 70.8% 59%, 59.5% 58.2%, 30.9% 63%);
+}

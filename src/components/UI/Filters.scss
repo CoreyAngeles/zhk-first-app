@@ -1,0 +1,90 @@
+/*filters  */
+@use "../../scss/variables.scss" as vars;
+
+.filters__wrapper {
+  background-color: vars.$interfaceBackgroundMainColor;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 12rem;
+  left: 6rem;
+  padding: 2.5rem 1.5rem;
+  z-index: 2;
+  border-radius: 2rem;
+  -webkit-border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  -ms-border-radius: 2rem;
+  -o-border-radius: 2rem;
+}
+
+.filters__tittle {
+  font-size: 2rem;
+  color: vars.$textColor;
+  margin-bottom: 3rem;
+}
+
+.filters__buttons-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
+
+.filters__btn {
+  color: vars.$textColor;
+  background-color: vars.$filtersBtnBackground;
+  padding: 0.5rem 3.5rem;
+  font-size: 1.5rem;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+
+.filters__first-btn {
+  border-radius: 1rem 1rem 0 0;
+  -webkit-border-radius: 1rem 1rem 0 0;
+  -moz-border-radius: 1rem 1rem 0 0;
+  -ms-border-radius: 1rem 1rem 0 0;
+  -o-border-radius: 1rem 1rem 0 0;
+}
+
+.filters__last-btn {
+  border-radius: 0 0 1rem 1rem;
+  -webkit-border-radius: 0 0 1rem 1rem;
+  -moz-border-radius: 0 0 1rem 1rem;
+  -ms-border-radius: 0 0 1rem 1rem;
+  -o-border-radius: 0 0 1rem 1rem;
+}
+
+.filters__showAll-btn {
+  background-color: vars.$filtersShowAllBtnMainColor;
+  color: vars.$filtersShowAllBtnMainTextColor;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+
+.first-btn-active {
+  color: vars.$filterButtonsActiveColor;
+  background-color: vars.$filter1RoomButtonColor;
+}
+
+.second-btn-active {
+  color: vars.$filterButtonsActiveColor;
+  background-color: vars.$filter2RoomButtonColor;
+}
+
+.third-btn-active {
+  color: vars.$filterButtonsActiveColor;
+  background-color: vars.$filter3RoomButtonColor;
+}
+
+.showAllBtn:disabled {
+  color: #bebebe;
+  background-color: vars.$filtersBtnBackground;
+}
