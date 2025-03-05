@@ -1,0 +1,28 @@
+@use '../../scss/variables' as vars;
+
+.fullscreen-btn-wrapper {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 90%;
+    left: 95%;
+    background-color: vars.$interfaceBackgroundMainColor;
+    z-index: 2;
+    border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -ms-border-radius: 10px ;
+    -o-border-radius: 10px ;
+}
+
+.fullscreen-btn {
+    display: block;
+    font-size: 30px;
+    padding: 10px 10px 5px 10px;
+    color: white;
+    border: none;
+    background: none;
+    cursor: pointer; 
+   
+}

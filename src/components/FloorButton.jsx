@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "./FloorButton.scss";
+import styles from "./FloorButton.module.scss";
 import { Link } from "react-router-dom";
 
-const FloorButton = ({ classname, id }) => {
+const FloorButton = ({ classOfCoords, id, setPathStatus }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
 
@@ -21,12 +21,21 @@ const FloorButton = ({ classname, id }) => {
     setTooltipPosition({ x, y });
   };
 
+  const changePathStatusOnIdFloor = (id) => {
+    setPathStatus(`${id} Этаж`);
+  };
+
   return (
     <>
-      <Link to="/viewFromTheTopPage">
+      <Link
+        to="/viewFromTheTopPage"
+        onClick={() => {
+          changePathStatusOnIdFloor(id);
+        }}
+      >
         <div
           id={id}
-          className={`main-choseFloorBtn ${classname}`}
+          className={`${styles["main-choseFloorBtn"]} ${classOfCoords}`}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
           onMouseMove={handleMouseMove}

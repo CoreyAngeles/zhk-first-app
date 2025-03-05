@@ -1,11 +1,52 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { PanZoomProvider, PanZoom, useSafeGestures } from "react-pan-and-zoom";
+import styles from "./ViewFromTheTopPage.module.scss";
+import Interface from "../components/UI/Interface";
+import mainImageURL from "/ZhkMain.jpg";
+import secondImageURL from "/FloorMain.jpg";
 
-const ViewFromTheTopPage = () => {
+const ViewFromTheTopPage = ({
+  clickedStatus,
+  setClickedStatus,
+  isFullscreen,
+  setIsFullscreen,
+  pathStatus,
+}) => {
+  useSafeGestures();
   return (
     <>
-      <div>ViewFromTheTopPage</div>
-      <Link to="/">Return to Main Page</Link>
+      <div className={styles["panzoom-main-wrapper"]}>
+        <img
+          className={styles["image-background"]}
+          src={mainImageURL}
+          alt="city"
+        />
+        <PanZoomProvider
+          minZoom={0.9}
+          maxZoom={1.4}
+          initialZoom={0.9}
+          centreOnMount={true}
+        >
+          <PanZoom contentClassName={styles["panzoom-wrapper"]}>
+            <div className={styles["main-page__wrapper"]}>
+              <img
+                src={secondImageURL}
+                alt="house"
+                className={styles["main-page__image"]}
+                onContextMenu={(e) => e.preventDefault()}
+                onDragStart={(e) => e.preventDefault()}
+              />
+            </div>
+          </PanZoom>
+        </PanZoomProvider>
+      </div>
+      <Interface
+        clickedStatus={clickedStatus}
+        setClickedStatus={setClickedStatus}
+        isFullscreen={isFullscreen}
+        setIsFullscreen={setIsFullscreen}
+        pathStatus={pathStatus}
+      />
     </>
   );
 };

@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./App.scss";
-import Filters from "./components/UI/Filters";
+import { Routes, Route } from "react-router-dom";
+import styles from "./App.module.scss";
 import MainPage from "./pages/MainPage";
 import ViewFromTheTopPage from "./pages/ViewFromTheTopPage";
 
@@ -11,26 +10,43 @@ function App() {
     room2: false,
     room3: false,
   });
+
+  const [isFullscreen, setIsFullscreen] = useState(false);
+
+  const [pathStatus, setPathStatus] = useState("");
+
   return (
     <>
-      <div className="main-screen">
-        <BrowserRouter>
-          <Routes>
-            <Route
-              path="/"
-              exact
-              element={<MainPage clickedStatus={clickedStatus} />}
-            />
-            <Route
-              path="/viewFromTheTopPage"
-              element={<ViewFromTheTopPage />}
-            />
-          </Routes>
-        </BrowserRouter>
-        <Filters
-          clickedStatus={clickedStatus}
-          setClickedStatus={setClickedStatus}
-        />
+      <div className={styles["main-screen"]}>
+        <Routes>
+          <Route
+            path="/"
+            exact
+            element={
+              <MainPage
+                clickedStatus={clickedStatus}
+                setClickedStatus={setClickedStatus}
+                isFullscreen={isFullscreen}
+                setIsFullscreen={setIsFullscreen}
+                pathStatus={pathStatus}
+                setPathStatus={setPathStatus}
+              />
+            }
+          />
+          <Route
+            path="/viewFromTheTopPage"
+            element={
+              <ViewFromTheTopPage
+                clickedStatus={clickedStatus}
+                setClickedStatus={setClickedStatus}
+                isFullscreen={isFullscreen}
+                setIsFullscreen={setIsFullscreen}
+                pathStatus={pathStatus}
+                setPathStatus={setPathStatus}
+              />
+            }
+          />
+        </Routes>
       </div>
     </>
   );

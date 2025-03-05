@@ -1,5 +1,5 @@
 import React from "react";
-import "./Filters.scss";
+import styles from "./Filters.module.scss";
 
 const Filters = ({ clickedStatus, setClickedStatus }) => {
   const firstButtonToggle = () => {
@@ -52,29 +52,29 @@ const Filters = ({ clickedStatus, setClickedStatus }) => {
   };
 
   return (
-    <div className="filters__wrapper">
-      <h3 className="filters__tittle">Фильтры</h3>
-      <div className="filters__buttons-wrapper">
+    <div className={styles["filters__wrapper"]}>
+      <h3 className={styles["filters__tittle"]}>Фильтры</h3>
+      <div className={styles["filters__buttons-wrapper"]}>
         <button
-          className={`filters__btn filters__first-btn ${
-            clickedStatus.room1 ? "first-btn-active" : ""
-          }`}
+          className={`${styles["filters__btn"]} ${
+            styles["filters__first-btn"]
+          } ${clickedStatus.room1 ? styles["first-btn-active"] : ""}`}
           onClick={firstButtonToggle}
         >
           1 Комната
         </button>
         <button
-          className={`filters__btn filters__second-btn ${
-            clickedStatus.room2 ? "second-btn-active" : ""
-          }`}
+          className={`${styles["filters__btn"]} ${
+            styles["filters__second-btn"]
+          } ${clickedStatus.room2 ? styles["second-btn-active"] : ""}`}
           onClick={secondButtonToggle}
         >
           2 Комнаты
         </button>
         <button
-          className={`filters__btn filters__last-btn ${
-            clickedStatus.room3 ? "third-btn-active" : ""
-          }`}
+          className={`${styles["filters__btn"]} ${
+            styles["filters__last-btn"]
+          } ${clickedStatus.room3 ? styles["last-btn-active"] : ""}`}
           onClick={thirdButtonToggle}
         >
           3 Комнаты
@@ -82,7 +82,7 @@ const Filters = ({ clickedStatus, setClickedStatus }) => {
       </div>
       <button
         disabled={checkShowAllButtonForDisabled(clickedStatus)}
-        className="filters__btn filters__showAll-btn showAllBtn"
+        className={`${styles["filters__btn"]} ${styles["filters__showAll-btn"]} ${styles["showAllBtn"]}`}
         onClick={showAllButtonAction}
       >
         Показать Все
