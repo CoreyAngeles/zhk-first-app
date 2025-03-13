@@ -20,6 +20,7 @@ const MainPage = ({
   useEffect(() => {
     setPathStatus("Главная");
   }, []);
+
   useSafeGestures();
   return (
     <>
@@ -33,7 +34,7 @@ const MainPage = ({
           minZoom={1.2}
           maxZoom={1.2}
           initialZoom={1.2}
-          initialPan={{ x: -620, y: 0 }}
+          // initialPan={{ x: -620, y: 0 }}
           centreOnMount={true}
         >
           <PanZoom contentClassName={styles["panzoom-wrapper"]}>

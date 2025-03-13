@@ -35,6 +35,7 @@ function App() {
           />
           <Route
             path="/viewFromTheTopPage"
+            exact
             element={
               <ViewFromTheTopPage
                 clickedStatus={clickedStatus}
