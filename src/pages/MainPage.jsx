@@ -4,9 +4,10 @@ import floorsCoordsStyles from "../scss/floorsCoords.module.scss";
 import overlaysCoordsStyles from "../scss/overlaysCoords.module.scss";
 import styles from "./MainPage.module.scss";
 import Interface from "../components/UI/Interface";
-import mainImageURL from "/ZhkMain.jpg";
+import mainImageURL from "/MainBackground.jpg";
 import FloorButton from "../components/FloorButton";
 import RoomOverlay from "../components/RoomOverlay";
+import mainVideo from "/mainVideo.mp4";
 
 const MainPage = ({
   clickedStatus,
@@ -32,17 +33,21 @@ const MainPage = ({
           minZoom={1.2}
           maxZoom={1.2}
           initialZoom={1.2}
+          initialPan={{ x: -620, y: 0 }}
           centreOnMount={true}
         >
           <PanZoom contentClassName={styles["panzoom-wrapper"]}>
             <div className={styles["main-page__wrapper"]}>
-              <img
+              {/* <img
                 src={mainImageURL}
                 alt="house"
                 className={styles["main-page__image"]}
                 onContextMenu={(e) => e.preventDefault()}
                 onDragStart={(e) => e.preventDefault()}
-              />
+              /> */}
+              <video autoPlay loop muted className={styles["video"]}>
+                <source src={mainVideo} type="video/mp4" />
+              </video>
               <RoomOverlay
                 clickedStatus={clickedStatus}
                 typeOfRoomClass={styles["room1-color"]}

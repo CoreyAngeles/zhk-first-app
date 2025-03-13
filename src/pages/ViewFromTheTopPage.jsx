@@ -2,7 +2,7 @@ import React from "react";
 import { PanZoomProvider, PanZoom, useSafeGestures } from "react-pan-and-zoom";
 import styles from "./ViewFromTheTopPage.module.scss";
 import Interface from "../components/UI/Interface";
-import mainImageURL from "/ZhkMain.jpg";
+import mainImageURL from "/MainBackground.jpg";
 import secondImageURL from "/FloorMain.jpg";
 
 const ViewFromTheTopPage = ({
@@ -19,12 +19,16 @@ const ViewFromTheTopPage = ({
         <img
           className={styles["image-background"]}
           src={mainImageURL}
-          alt="city"
+          alt="Дом"
         />
         <PanZoomProvider
           minZoom={0.9}
           maxZoom={1.4}
           initialZoom={0.9}
+          initialPan={{ x: 438, y: 43 }}
+          // onChange={(pan) => {
+          //   console.log(pan);
+          // }}
           centreOnMount={true}
         >
           <PanZoom contentClassName={styles["panzoom-wrapper"]}>
